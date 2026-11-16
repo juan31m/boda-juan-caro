@@ -1,0 +1,10 @@
+.pantalla-inicio .elementor-element-462ea90c { width:100% !important; }
+.pantalla-inicio .boda-portada { color:#412b0a; text-align:center; line-height:1.2; margin:0 auto; max-width:28rem; padding:0 1rem; }
+.boda-portada #boda-familia { display:block; font:inherit; font-size:clamp(19px,4.8vw,28px); text-transform:uppercase; overflow-wrap:anywhere; margin:0 0 16px; }
+.boda-portada p { margin:12px 0; font-size:clamp(17px,4.2vw,25px); }
+.boda-portada .boda-novios { font-weight:600; }
+.boda-portada #boda-estado { font-size:14px; line-height:1.35; }
+.boda-portada #boda-reintentar { border:1px solid #8d6d2b; border-radius:20px; background:#fff7e5; color:#412b0a; padding:8px 16px; cursor:pointer; }
+.boda-portada [hidden] { display:none !important; }
+.pantalla-inicio .bloque-pases { display:none !important; }
+@media (max-height:650px) { .boda-portada p { margin:6px 0; font-size:17px; } .boda-portada #boda-familia { margin-bottom:8px; font-size:20px; } }
