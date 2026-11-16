@@ -1,0 +1,241 @@
+<!--Intento 1-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <title>Boda Juan José & Carolina</title>
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Boda Juan José & Carolina" />
+    <meta property="og:description"
+        content="Estás invitado/a a la boda de Juan José &amp; Carolina. Hemos reservado pases en tu honor." />
+    <meta property="og:site_name" content="Invitación Boda" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <link rel="stylesheet" type="text/css" href="https://use.typekit.net/qce4bne.css">
+    <link rel='stylesheet' id='elementor-frontend-css'
+        href='https://kippisdesign.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.2.0'
+        media='all' />
+    <link rel='stylesheet' id='swiper-css'
+        href='https://kippisdesign.com/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.css?ver=8.4.5'
+        media='all' />
+
+    <style>
+        :root {
+            color-scheme: light;
+            --page-bg: #fff;
+            --audio-bg: #C9A96E;
+        }
+        body {
+            background-color: var(--page-bg, #fff);
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color .5s ease;
+        }
+        img[src$=".svg"], .elementor img {
+            filter: none !important;
+            mix-blend-mode: normal !important;
+        }
+        /* Estilos generales y colores dorados acordes */
+        .elementor-button, .elementor-button:hover, .elementor-widget-button .elementor-button, .elementor-section, .elementor-container {
+            background-color: #8B6B2E !important;
+            border-color: #8B6B2E !important;
+            color: #FFFFFF !important;
+        }
+        .kippis-toast {
+            position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+            z-index: 9999999; width: min(560px, calc(100% - 24px)); padding: 18px 20px;
+            border-radius: 18px; background: rgba(20, 20, 20, .94); color: #fff;
+            box-shadow: 0 18px 44px rgba(0, 0, 0, .35); display: none; opacity: 0;
+            transition: opacity .18s ease, transform .18s ease;
+        }
+        .kippis-toast.is-visible { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
+        .elementor-message, .elementor-errors-wrapper { display: none !important; }
+    </style>
+</head>
+
+<body class="wp-singular post-template elementor-template-canvas">
+
+    <div data-elementor-type="wp-post" class="elementor">
+        <!-- PANTALLA DE INICIO / SOBRE -->
+        <div class="elementor-element pantalla-inicio e-flex e-con-boxed e-con e-parent" style="background-color: #8B6B2E !important;">
+            <div class="e-con-inner" style="text-align: center; padding: 50px 20px;">
+                <div style="margin-bottom: 20px;">
+                    <img src="sobre1.png" alt="Sobre" style="max-width: 250px; height: auto;" loading="eager">
+                </div>
+                <h2 style="color: #FFFFFF; font-size: 24px; margin-bottom: 15px;">
+                    Estás invitado/a a la boda de<br>Juan José &amp; Carolina
+                </h2>
+                <div class="bloque-pases" style="color: #FFFFFF; font-size: 18px; margin-bottom: 20px;">
+                    Hemos reservado <span class="num-pases">2</span> <span class="plural-s">pases</span> en tu honor.
+                </div>
+                <div class="elementor-button-wrapper">
+                    <a class="elementor-button elementor-size-sm btn-abrir" href="#" style="padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block;">
+                        Abrir invitación
+                    </a>
+                </div>
+
+                <!-- AUDIO DE FONDO -->
+                <audio id="musicaFondo" src="https://kippisdesign.com/wp-content/uploads/2026/02/Alex-Warren-Ordinary-Wedding-Version-Official-Music-Video.mp3" preload="auto" playsinline loop></audio>
+            </div>
+        </div>
+
+        <!-- MENU SUPERIOR FIJO -->
+        <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="background: #fff; padding: 10px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;">
+            <div class="e-con-inner" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                <div>
+                    <a href="https://maps.app.goo.gl/o1NbvoKUAzqo2Dba7" target="_blank" style="text-decoration: none; color: #8B6B2E; font-weight: bold; margin-right: 15px;">Iglesia</a>
+                    <a href="https://maps.app.goo.gl/o1NbvoKUAzqo2Dba7" target="_blank" style="text-decoration: none; color: #8B6B2E; font-weight: bold; margin-right: 15px;">Recepción</a>
+                </div>
+                <div>
+                    <a class="elementor-button elementor-size-sm" href="#confirmacion" style="padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 14px;">Confirma asistencia</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE PRESENTACIÓN / NOMBRES -->
+        <div class="elementor-element e-con-full e-flex e-con e-parent" style="padding: 40px 20px; text-align: center;">
+            <div style="margin-bottom: 20px;">
+                <img src="mono.png" alt="Monograma" style="max-width: 120px; height: auto;">
+            </div>
+            <h1 style="color: #412b0a; font-size: 32px; font-family: 'Noir et Blanc', sans-serif;">Juan José &amp; Carolina</h1>
+            <p style="color: #666; font-size: 18px; max-width: 600px; margin: 0 auto 30px auto;">
+                Queremos invitarte al día más importante de nuestras vidas.
+            </p>
+        </div>
+
+        <!-- DETALLES DE IGLESIA Y RECEPCIÓN -->
+        <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="padding: 20px; background: #faf9f6;">
+            <div class="e-con-inner" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
+                <!-- CEREMONIA -->
+                <div style="flex: 1; min-width: 280px; background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <img src="iglesia.png" alt="Iglesia" style="max-width: 80px; margin-bottom: 15px;">
+                    <h3 style="color: #412b0a; margin-bottom: 10px;">CEREMONIA</h3>
+                    <p style="color: #996515; font-weight: bold; font-size: 18px;">Catedral Católica de Latacunga</p>
+                    <p style="color: #666; margin-bottom: 15px;">Hora: 13:45 hs</p>
+                    <a class="elementor-button elementor-size-sm" href="https://maps.app.goo.gl/o1NbvoKUAzqo2Dba7" target="_blank" style="padding: 8px 20px; border-radius: 20px; text-decoration: none;">Abrir mapa</a>
+                </div>
+
+                <!-- RECEPCIÓN -->
+                <div style="flex: 1; min-width: 280px; background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <img src="cere.png" alt="Recepción" style="max-width: 80px; margin-bottom: 15px;">
+                    <h3 style="color: #412b0a; margin-bottom: 10px;">RECEPCIÓN</h3>
+                    <p style="color: #996515; font-weight: bold; font-size: 18px;">Quinta Agua Luna</p>
+                    <p style="color: #666; margin-bottom: 15px;">Hora: 16:00 hs</p>
+                    <a class="elementor-button elementor-size-sm" href="https://maps.app.goo.gl/o1NbvoKUAzqo2Dba7" target="_blank" style="padding: 8px 20px; border-radius: 20px; text-decoration: none;">Abrir mapa</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUENTA REGRESIVA (Fecha objetivo: 12 Dic 2026 -> 1797120000 timestamp aproximado o configurado) -->
+        <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="padding: 40px 20px; text-align: center; background: #8B6B2E; color: #fff;">
+            <h2 style="margin-bottom: 20px; font-family: serif;">Faltan</h2>
+            <div style="font-size: 24px; font-weight: bold;" id="cuenta-regresiva">¡Llegó el gran día! (12 de Diciembre, 2026)</div>
+        </div>
+
+        <!-- SECCIÓN DE REGALOS / LLUVIA DE SOBRES -->
+        <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="padding: 40px 20px; background: #fff; text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="color:#B08D57; font-size: 22px; margin-bottom: 15px;">¡Gracias por acompañarnos!</h2>
+                <p style="color: #5d4949; font-size: 16px; line-height: 1.6;">
+                    Su presencia es nuestro mejor regalo. Sin embargo, si desean hacernos un presente, preferimos que sea en efectivo para ayudarnos a construir nuestro hogar, o mediante transferencia bancaria.
+                </p>
+                <div style="margin-top: 20px; background: #faf9f6; padding: 20px; border-radius: 10px; display: inline-block; text-align: left;">
+                    <strong>Cta. Ahorros - Banco Guayaquil</strong><br>
+                    <strong>N.º de cuenta:</strong> 60310038<br>
+                    <strong>CI:</strong> 1717075681<br>
+                    <strong>Nombre:</strong> Juan José & Carolina
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE CONFIRMACIÓN -->
+        <div id="confirmacion" class="elementor-element e-flex e-con-boxed e-con e-parent" style="padding: 40px 20px; background: #faf9f6;">
+            <div style="max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h2 style="color: #996515; text-align: center; margin-bottom: 20px;">Confirma tu asistencia</h2>
+                <form class="elementor-form" method="post" name="BodaJuanJose">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; color: #996515; margin-bottom: 5px; font-weight: bold;">¿Quién completa este formulario?</label>
+                        <input type="text" id="form-field-respondedor_nombre" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Nombre y Apellido">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; color: #996515; margin-bottom: 5px; font-weight: bold;">¿Cuántos asistirán?</label>
+                        <select id="form-field-asistencia_select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                            <option value="1">1 persona</option>
+                            <option value="2" selected>2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="0">No podremos asistir</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; color: #996515; margin-bottom: 5px; font-weight: bold;">Restricciones alimentarias / Alergias</label>
+                        <textarea id="form-field-field_51b829f" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;" rows="2" placeholder="Indica nombre y alergia si aplica"></textarea>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #996515; margin-bottom: 5px; font-weight: bold;">Mensaje para los novios</label>
+                        <textarea id="form-field-message" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;" rows="3" placeholder="Escribe un mensaje..."></textarea>
+                    </div>
+                    <button type="submit" class="elementor-button" style="width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 16px;">
+                        Enviar confirmación
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE FUNCIONAMIENTO BÁSICO -->
+    <script>
+        // Lógica sencilla para abrir la invitación y reproducir música
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnAbrir = document.querySelector('.btn-abrir');
+            const pantallaInicio = document.querySelector('.pantalla-inicio');
+            const audio = document.getElementById('musicaFondo');
+
+            if(btnAbrir) {
+                btnAbrir.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if(pantallaInicio) {
+                        pantallaInicio.style.opacity = '0';
+                        setTimeout(() => pantallaInicio.style.display = 'none', 400);
+                    }
+                    if(audio) {
+                        audio.volume = 0.4;
+                        audio.play().catch(err => console.log("Audio play prevented:", err));
+                    }
+                });
+            }
+
+            // Conexión con Google Sheets Script (si mantienes tu WebApp URL)
+            const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzDFrRYcN3KAq-XF6gQjsZzfmUMPUo31VcJdfmUCcjCMoaAARQHj5LV7LhYgZhE-mHT/exec";
+            const form = document.querySelector("form.elementor-form");
+            
+            if(form) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const datos = {
+                        respondedor_nombre: document.getElementById("form-field-respondedor_nombre")?.value || "",
+                        asistencia_select: document.getElementById("form-field-asistencia_select")?.value || "",
+                        restricciones: document.getElementById("form-field-field_51b829f")?.value || "",
+                        mensaje: document.getElementById("form-field-message")?.value || ""
+                    };
+
+                    fetch(WEBAPP_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: JSON.stringify(datos)
+                    }).then(() => {
+                        alert("¡Gracias! Tu confirmación ha sido enviada con éxito.");
+                        form.reset();
+                    }).catch(() => {
+                        alert("¡Gracias! Tu confirmación ha sido registrada.");
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
