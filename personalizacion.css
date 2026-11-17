@@ -10,8 +10,8 @@
     font-family: 'Cormorant Garamond', serif; 
 }
 
-/* Se elimina text-transform: uppercase para respetar las mayúsculas y minúsculas originales */
-.boda-portada #boda-familia { 
+/* Respeta estrictamente las mayúsculas y minúsculas originales del invitado */
+.pantalla-inicio #boda-familia { 
     display: block; 
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(18px, 4.5vw, 26px); 
@@ -26,21 +26,22 @@
     font-size: clamp(16px, 4vw, 22px); 
 }
 
+/* Ajuste: se reduce ligeramente el tamaño de la letra para los nombres de los novios */
 .boda-portada .boda-novios { 
     font-family: 'Great Vibes', cursive !important; 
-    font-size: clamp(34px, 7vw, 50px);
+    font-size: clamp(28px, 5.5vw, 42px); /* Letra ligeramente más pequeña y elegante */
     font-weight: normal;
     color: #173657;
-    margin: 6px 0;
+    margin: 4px 0;
     line-height: 1.05; 
 }
 
 .boda-portada #boda-estado { font-size: 14px; line-height: 1.35; margin-top: 10px; }
 
 .boda-portada #boda-reintentar { 
-    border: 1px solid #8d6d2b; 
+    border: 1px solid #d4c39d; 
     border-radius: 20px; 
-    background: #fff7e5; 
+    background: #fbf5e6; 
     color: #412b0a; 
     padding: 8px 16px; 
     cursor: pointer; 
@@ -51,7 +52,27 @@
 
 @media (max-height: 650px) { 
     .boda-portada p { margin: 4px 0; font-size: 16px; } 
-    .boda-portada #boda-familia { margin-bottom: 6px; font-size: 18px; } 
+    .pantalla-inicio #boda-familia { margin-bottom: 6px; font-size: 18px; } 
+}
+
+/* --- ESTILOS PARA EL BOTÓN EN AMARILLO MANTEQUILLA Y FORMA OVALADA --- */
+.pantalla-inicio .elementor-button, 
+.elementor-widget-button .elementor-button {
+    background-color: #fbf5e6 !important; /* Color de fondo amarillo mantequilla */
+    color: #173657 !important;            /* Color del texto */
+    border-radius: 35px !important;       /* Forma ovalada tipo píldora */
+    border: 1px solid #dfcca3 !important; /* Borde sutil y cálido */
+    font-family: 'Great Vibes', cursive !important; /* Letra cursiva elegante */
+    font-size: 30px !important;           /* Tamaño proporcionado para el botón */
+    font-weight: normal !important;
+    padding: 10px 32px !important;        
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Efecto al pasar el cursor */
+.pantalla-inicio .elementor-button:hover {
+    background-color: #f4ecda !important;
+    color: #11263d !important;
 }
 
 /* TIPOGRAFÍA DEL FORMULARIO DE ASISTENCIA */
