@@ -60,13 +60,13 @@
 .elementor-widget-button .elementor-button {
     background-color: #fbf5e6 !important; /* Color de fondo amarillo mantequilla */
     color: #173657 !important;            /* Color del texto */
-    border-radius: 35px !important;       /* Forma ovalada tipo píldora */
+    border-radius: 30px !important;       /* Forma ovalada tipo píldora */
     border: 1px solid #dfcca3 !important; /* Borde sutil y cálido */
     font-family: 'Great Vibes', cursive !important; /* Letra cursiva elegante */
-    font-size: 30px !important;           /* Tamaño proporcionado para el botón */
+    font-size: 26px !important;           /* Tamaño proporcionado para el botón */
     font-weight: normal !important;
-    padding: 10px 32px !important;        
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    padding: 6px 24px !important;        
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* Efecto al pasar el cursor */
