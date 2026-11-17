@@ -1,13 +1,63 @@
+<!-- Añade esto en la cabecera (<head>) de tu HTML para cargar las fuentes oficiales -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 .pantalla-inicio .elementor-element-462ea90c { width:100% !important; }
-.pantalla-inicio .boda-portada { color:#173657; text-align:center; line-height:1.2; margin:0 auto; max-width:28rem; padding:0 1rem; }
-.boda-portada #boda-familia { display:block; font:inherit; font-size:clamp(19px,4.8vw,28px); text-transform:uppercase; overflow-wrap:anywhere; margin:0 0 16px; }
-.boda-portada p { margin:12px 0; font-size:clamp(17px,4.2vw,25px); }
-.boda-portada .boda-novios { font-weight:600; }
-.boda-portada #boda-estado { font-size:14px; line-height:1.35; }
-.boda-portada #boda-reintentar { border:1px solid #8d6d2b; border-radius:20px; background:#fff7e5; color:#412b0a; padding:8px 16px; cursor:pointer; }
-.boda-portada [hidden] { display:none !important; }
-.pantalla-inicio .bloque-pases { display:none !important; }
-@media (max-height:650px) { .boda-portada p { margin:6px 0; font-size:17px; } .boda-portada #boda-familia { margin-bottom:8px; font-size:20px; } }
+
+.pantalla-inicio .boda-portada { 
+    color: #173657; 
+    text-align: center; 
+    line-height: 1.2; 
+    margin: 0 auto; 
+    max-width: 28rem; 
+    padding: 0 1rem; 
+    font-family: 'Cormorant Garamond', serif; /* Fuente principal elegante */
+}
+
+.boda-portada #boda-familia { 
+    display: block; 
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 4.8vw, 28px); 
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    overflow-wrap: anywhere; 
+    margin: 0 0 16px; 
+}
+
+.boda-portada p { 
+    margin: 12px 0; 
+    font-size: clamp(17px, 4.2vw, 25px); 
+}
+
+/* Estilo para los nombres de los novios (simula la letra cursiva sofisticada de la invitación) */
+.boda-portada .boda-novios { 
+    font-family: 'Great Vibes', cursive !important; 
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: normal;
+    color: #173657;
+    margin: 15px 0;
+}
+
+.boda-portada #boda-estado { font-size: 14px; line-height: 1.35; }
+
+.boda-portada #boda-reintentar { 
+    border: 1px solid #8d6d2b; 
+    border-radius: 20px; 
+    background: #fff7e5; 
+    color: #412b0a; 
+    padding: 8px 16px; 
+    cursor: pointer; 
+}
+
+.boda-portada [hidden] { display: none !important; }
+.pantalla-inicio .bloque-pases { display: none !important; }
+
+@media (max-height: 650px) { 
+    .boda-portada p { margin: 6px 0; font-size: 17px; } 
+    .boda-portada #boda-familia { margin-bottom: 8px; font-size: 20px; } 
+}
+
 /* TIPOGRAFÍA DEL FORMULARIO DE ASISTENCIA */
 .elementor-field-group-asistencia_select > label {
     font-family: 'Cormorant Garamond', serif !important;
