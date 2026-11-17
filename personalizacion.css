@@ -8,3 +8,14 @@
 .boda-portada [hidden] { display:none !important; }
 .pantalla-inicio .bloque-pases { display:none !important; }
 @media (max-height:650px) { .boda-portada p { margin:6px 0; font-size:17px; } .boda-portada #boda-familia { margin-bottom:8px; font-size:20px; } }
+/* TIPOGRAFÍA DEL FORMULARIO DE ASISTENCIA */
+.elementor-field-group-asistencia_select > label {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.elementor-field-group-asistencia_select select {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 17px !important;
+}
