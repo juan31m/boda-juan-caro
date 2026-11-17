@@ -32,8 +32,8 @@
     font-size: clamp(28px, 5.5vw, 42px); /* Letra ligeramente más pequeña y elegante */
     font-weight: normal;
     color: #173657;
-    margin: 4px 0;
-    line-height: 1.05; 
+    margin: 8px 0;
+    line-height: 1.2; 
 }
 
 .boda-portada #boda-estado { font-size: 14px; line-height: 1.35; margin-top: 10px; }
