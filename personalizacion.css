@@ -7,39 +7,39 @@
 .pantalla-inicio .boda-portada { 
     color: #173657; 
     text-align: center; 
-    line-height: 1.2; 
+    line-height: 1.15; 
     margin: 0 auto; 
     max-width: 28rem; 
     padding: 0 1rem; 
-    font-family: 'Cormorant Garamond', serif; /* Fuente principal elegante */
+    font-family: 'Cormorant Garamond', serif; 
 }
 
+/* Se elimina text-transform: uppercase para respetar las mayúsculas y minúsculas originales */
 .boda-portada #boda-familia { 
     display: block; 
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(19px, 4.8vw, 28px); 
+    font-size: clamp(18px, 4.5vw, 26px); 
     font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase; 
+    letter-spacing: 0.5px;
     overflow-wrap: anywhere; 
-    margin: 0 0 16px; 
+    margin: 0 0 10px; 
 }
 
 .boda-portada p { 
-    margin: 12px 0; 
-    font-size: clamp(17px, 4.2vw, 25px); 
+    margin: 8px 0; 
+    font-size: clamp(16px, 4vw, 22px); 
 }
 
-/* Estilo para los nombres de los novios (simula la letra cursiva sofisticada de la invitación) */
 .boda-portada .boda-novios { 
     font-family: 'Great Vibes', cursive !important; 
-    font-size: clamp(32px, 6vw, 48px);
+    font-size: clamp(34px, 7vw, 50px);
     font-weight: normal;
     color: #173657;
-    margin: 15px 0;
+    margin: 6px 0;
+    line-height: 1.05; 
 }
 
-.boda-portada #boda-estado { font-size: 14px; line-height: 1.35; }
+.boda-portada #boda-estado { font-size: 14px; line-height: 1.35; margin-top: 10px; }
 
 .boda-portada #boda-reintentar { 
     border: 1px solid #8d6d2b; 
@@ -54,8 +54,8 @@
 .pantalla-inicio .bloque-pases { display: none !important; }
 
 @media (max-height: 650px) { 
-    .boda-portada p { margin: 6px 0; font-size: 17px; } 
-    .boda-portada #boda-familia { margin-bottom: 8px; font-size: 20px; } 
+    .boda-portada p { margin: 4px 0; font-size: 16px; } 
+    .boda-portada #boda-familia { margin-bottom: 6px; font-size: 18px; } 
 }
 
 /* TIPOGRAFÍA DEL FORMULARIO DE ASISTENCIA */
