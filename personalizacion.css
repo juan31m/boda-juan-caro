@@ -10,38 +10,48 @@
     font-family: 'Cormorant Garamond', serif; 
 }
 
-/* Respeta estrictamente las mayúsculas y minúsculas originales del invitado */
+/* 1. Nombre de la familia - Playfair Display Bold */
 .pantalla-inicio #boda-familia { 
     display: block; 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif !important;
     font-size: clamp(18px, 4.5vw, 26px); 
-    font-weight: 600;
+    font-weight: bold !important;
     letter-spacing: 0.5px;
     overflow-wrap: anywhere; 
     margin: 0 0 10px; 
 }
 
+/* 2. Texto de invitación - Cormorant Garamond Regular */
 .boda-portada p { 
     margin: 8px 0; 
     font-size: clamp(16px, 4vw, 22px); 
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: normal !important;
 }
 
-/* Ajuste: se reduce ligeramente el tamaño de la letra para los nombres de los novios */
+/* 3. Nombres de los novios - Great Vibes */
 .boda-portada .boda-novios { 
     font-family: 'Great Vibes', cursive !important; 
-    font-size: clamp(28px, 5.5vw, 42px); /* Letra ligeramente más pequeña y elegante */
+    font-size: clamp(28px, 5.5vw, 42px); 
     font-weight: normal;
     color: #173657;
     margin: 8px 0;
     line-height: 1.2; 
 }
 
-.boda-portada #boda-estado { font-size: 14px; line-height: 1.35; margin-top: 10px; }
+/* 4. Número de pases - Cormorant Garamond Regular */
+.pantalla-inicio .bloque-pases,
+.boda-portada #boda-estado { 
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 16px; 
+    line-height: 1.35; 
+    margin-top: 10px; 
+}
 
 .boda-portada #boda-reintentar { 
     border: 1px solid #d4c39d; 
     border-radius: 20px; 
-    background: #fbf5e6; 
+    background: #FCF5E5; 
     color: #412b0a; 
     padding: 8px 16px; 
     cursor: pointer; 
@@ -55,23 +65,34 @@
     .pantalla-inicio #boda-familia { margin-bottom: 6px; font-size: 18px; } 
 }
 
-/* --- ESTILOS PARA EL BOTÓN EN AMARILLO MANTEQUILLA Y FORMA OVALADA --- */
+/* 5. Botón "Abrir invitación" - Cormorant Garamond Medium y color #FCF5E5 */
 .pantalla-inicio .elementor-button, 
 .elementor-widget-button .elementor-button {
-    background-color: #fbf5e6 !important; /* Color de fondo amarillo mantequilla */
-    color: #173657 !important;            /* Color del texto */
-    border-radius: 30px !important;       /* Forma ovalada tipo píldora */
+    background-color: #FCF5E5 !important; /* Amarillo mantequilla suave (#FCF5E5) */
+    color: #173657 !important;             /* Color del texto */
+    border-radius: 30px !important;        /* Forma ovalada tipo píldora */
     border: 1px solid #dfcca3 !important; /* Borde sutil y cálido */
-    font-family: 'Great Vibes', cursive !important; /* Letra cursiva elegante */
-    font-size: 26px !important;           /* Tamaño proporcionado para el botón */
-    font-weight: normal !important;
-    padding: 6px 24px !important;        
+    font-family: 'Cormorant Garamond', serif !important; /* Tipografía Cormorant Garamond */
+    font-size: 22px !important;            
+    font-weight: 500 !important;           /* Estilo Medium */
+    padding: 8px 24px !important;         
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Forzar que el texto y los iconos dentro de los botones mantengan el color y fuente */
+.pantalla-inicio .elementor-button *, 
+.elementor-widget-button .elementor-button * {
+    color: #173657 !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 500 !important;
 }
 
 /* Efecto al pasar el cursor */
 .pantalla-inicio .elementor-button:hover {
-    background-color: #f4ecda !important;
+    background-color: #f7eed8 !important;
+    color: #11263d !important;
+}
+.pantalla-inicio .elementor-button:hover * {
     color: #11263d !important;
 }
 
