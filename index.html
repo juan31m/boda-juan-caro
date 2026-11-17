@@ -857,8 +857,7 @@
     </style>
 
     
-    <script
-        type='text/javascript'>FacebookSignal.init({ "held": false, "ajaxUrl": "https:\/\/kippisdesign.com\/wp-admin\/admin-ajax.php", "releaseAction": "fbpix_release_signals", "pixelId": "827312042146637", "attribution": {}, "capig": "1" }); FacebookSignal.initPixel("827312042146637", {}, { "agent": "wordpress_0_fbl4b-7.0.2-5.2.1", "includeCapiIntegration": true });</script>
+    
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -866,6 +865,16 @@
 
 <script src="config.js" defer></script>
 <script src="invitacion.js" defer></script>
+<style id="boda-confirmaciones-estilo">
+#boda-asistentes {width:100%;display:flex;flex-wrap:wrap;gap:12px;}
+#boda-asistentes [hidden] {display:none!important;}
+#boda-confirmacion-estado {width:100%;margin:16px 0;line-height:1.5;color:#412b0a;}
+#boda-confirmacion-estado[data-estado="error"] {color:#922727;}
+#boda-confirmacion-estado[data-estado="guardado"] {color:#256029;font-weight:bold;}
+form[aria-busy="true"] button {opacity:.65;cursor:wait;}
+
+</style>
+<script src="confirmaciones.js" defer></script>
 </head>
 
 <body
@@ -1169,7 +1178,7 @@
                     data-id="14fc9fa8" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-4e02902b e-full_width e-n-menu-layout-horizontal e-n-menu-tablet elementor-widget elementor-widget-n-menu"
                         data-id="4e02902b" data-element_type="widget" data-e-type="widget"
-                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Fiesta&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/2Li21WDSQ7Qp3fti6&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Fiesta&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                         data-widget_type="mega-menu.default">
                         <div class="elementor-widget-container">
                             <nav class="e-n-menu" data-widget-number="130" aria-label="Menú">
@@ -1291,7 +1300,7 @@
                     data-id="658d2645" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-1346e5a4 e-full_width e-n-menu-layout-horizontal e-n-menu-tablet elementor-widget elementor-widget-n-menu"
                         data-id="1346e5a4" data-element_type="widget" data-e-type="widget"
-                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Catedral%20Cat%C3%B3lica%20de%20Latacunga&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Recepci\u00f3n&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Quinta%20Agua%20Luna&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/2Li21WDSQ7Qp3fti6&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;item_position_horizontal_mobile&quot;:&quot;end&quot;,&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Catedral%20Cat%C3%B3lica%20de%20Latacunga&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Recepci\u00f3n&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Quinta%20Agua%20Luna&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;item_position_horizontal_mobile&quot;:&quot;end&quot;,&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                         data-widget_type="mega-menu.default">
                         <div class="elementor-widget-container">
                             <nav class="e-n-menu" data-widget-number="323" aria-label="Menú">
@@ -2485,9 +2494,9 @@
                 <div class="elementor-element elementor-element-53677d03 elementor-widget__width-initial elementor-button-align-stretch elementor-widget elementor-widget-form"
                     data-id="53677d03" data-element_type="widget" data-e-type="widget"
                     data-settings="{&quot;step_next_label&quot;:&quot;Siguiente&quot;,&quot;step_previous_label&quot;:&quot;Anterior&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
-                    data-widget_type="form.default">
+                    data-widget_type="html.default">
                     <div class="elementor-widget-container">
-                        <form class="elementor-form" method="post" name="Burgundy" aria-label="Burgundy">
+                        <form class="elementor-form" method="post" name="Confirmacion boda" aria-label="Confirmación de asistencia">
                             <input type="hidden" name="post_id" value="233849" />
                             <input type="hidden" name="form_id" value="53677d03" />
                             <input type="hidden" name="referer_title"
@@ -2521,38 +2530,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div
-                                    class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-nombre_2 elementor-col-100">
-                                    <label for="form-field-nombre_2" class="elementor-field-label">
-                                        Nombre Invitado 2 </label>
-                                    <input size="1" type="text" name="form_fields[nombre_2]" id="form-field-nombre_2"
-                                        class="elementor-field elementor-size-sm  elementor-field-textual"
-                                        placeholder="Nombre y Apellido">
-                                </div>
-                                <div
-                                    class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-nombre_3 elementor-col-100">
-                                    <label for="form-field-nombre_3" class="elementor-field-label">
-                                        Nombre Invitado 3 </label>
-                                    <input size="1" type="text" name="form_fields[nombre_3]" id="form-field-nombre_3"
-                                        class="elementor-field elementor-size-sm  elementor-field-textual"
-                                        placeholder="Nombre y Apellido">
-                                </div>
-                                <div
-                                    class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-nombre_4 elementor-col-100">
-                                    <label for="form-field-nombre_4" class="elementor-field-label">
-                                        Nombre Invitado 4 </label>
-                                    <input size="1" type="text" name="form_fields[nombre_4]" id="form-field-nombre_4"
-                                        class="elementor-field elementor-size-sm  elementor-field-textual"
-                                        placeholder="Nombre y Apellido">
-                                </div>
-                                <div
-                                    class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-nombre_5 elementor-col-100">
-                                    <label for="form-field-nombre_5" class="elementor-field-label">
-                                        Nombre Invitado 5 </label>
-                                    <input size="1" type="text" name="form_fields[nombre_5]" id="form-field-nombre_5"
-                                        class="elementor-field elementor-size-sm  elementor-field-textual"
-                                        placeholder="Nombre y Apellido">
-                                </div>
+                                
+                                
+                                
+                                
                                 <div
                                     class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-field_51b829f elementor-col-100">
                                     <label for="form-field-field_51b829f" class="elementor-field-label"
@@ -2601,12 +2582,7 @@
 
     <button 
         class="elementor-button elementor-size-sm" 
-        type="submit"
-        onclick="
-            setTimeout(function() {
-                alert('Gracias, se ha enviado tu confirmación');
-            }, 1000);
-        ">
+        type="submit">
 
         <span class="elementor-button-content-wrapper">
 
@@ -2633,117 +2609,7 @@
                             }
                         </style>
 
-                        <script>
-                            (function () {
-                                const initKippisForm = () => {
-                                    // 1) Obtener pases de la URL
-                                    if (!window.bodaInvitacion) return;
-                                    const np = window.bodaInvitacion.cupos;
-
-                                    // 2) Selectores de Elementor (por name parcial)
-                                    const getEl = (id) => document.querySelector(`[name*="${id}"]`);
-                                    const getWrapper = (id) => {
-                                        const el = getEl(id);
-                                        return el ? el.closest('.elementor-field-group') : null;
-                                    };
-
-                                    // Campos clave
-                                    const selAsistencia = getEl('asistencia_select');
-                                    const hNombres = getEl('nombres_acumulados');
-                                    const hPasesURL = getEl('pases_asignados');
-
-                                    // NUEVO: campo fijo siempre visible/obligatorio (Label: "Nombre completo")
-                                    // Name interno recomendado: respondedor_nombre
-                                    const respondedor = getEl('respondedor_nombre');
-
-                                    if (!selAsistencia) return;
-
-                                    // 3) Poblar el selector según NP
-                                    selAsistencia.innerHTML = '<option value="" disabled selected>Selecciona una opción</option>';
-                                    for (let i = 1; i <= np; i++) {
-                                        const opt = document.createElement('option');
-                                        opt.value = i;
-                                        opt.textContent = i + (i === 1 ? ' persona' : ' personas');
-                                        selAsistencia.appendChild(opt);
-                                    }
-                                    selAsistencia.appendChild(new Option('No podremos asistir', '0'));
-
-                                    // Guardar pases originales en campo oculto
-                                    if (hPasesURL) hPasesURL.value = np;
-
-                                    // 4) Sincronizar nombres para el Excel (incluye respondedor)
-                                    const actualizarNombresAcumulados = () => {
-                                        if (!hNombres) return;
-
-                                        const cantidad = parseInt(selAsistencia.value) || 0;
-                                        const nombres = [];
-
-                                        // Siempre intentamos guardar el nombre de quien responde (sirve incluso si "No podremos asistir")
-                                        if (respondedor && respondedor.value.trim() !== "") {
-                                            nombres.push(respondedor.value.trim());
-                                        }
-
-                                        // Si asisten 2+, agregamos los demás nombres visibles (nombre_2..nombre_10)
-                                        if (cantidad > 1) {
-                                            for (let i = 2; i <= cantidad; i++) {
-                                                const input = getEl(`nombre_${i}`);
-                                                if (input && input.value.trim() !== "") {
-                                                    nombres.push(input.value.trim());
-                                                }
-                                            }
-                                        }
-
-                                        // Si cantidad = 0 o 1, igual queda al menos el respondedor (si lo escribió)
-                                        hNombres.value = nombres.join(', ');
-                                    };
-
-                                    // 5) Lógica de visibilidad y requisitos
-                                    const actualizarInterfaz = () => {
-                                        const cantidad = parseInt(selAsistencia.value) || 0;
-
-                                        // IMPORTANTE:
-                                        // - Ya no usamos nombre_1 (se reemplaza por "respondedor_nombre" fijo)
-                                        // - Mostramos/ocultamos solo nombre_2..nombre_10
-                                        for (let i = 2; i <= Math.max(10, np); i++) {
-                                            const wrapper = getWrapper(`nombre_${i}`);
-                                            const input = getEl(`nombre_${i}`);
-
-                                            if (wrapper && input) {
-                                                if (i <= cantidad && cantidad > 1) {
-                                                    wrapper.style.display = 'block';
-                                                    wrapper.classList.remove('fila-invisible');
-                                                    input.required = true; // obligatorio solo si visible
-                                                } else {
-                                                    wrapper.style.display = 'none';
-                                                    wrapper.classList.add('fila-invisible');
-                                                    input.required = false; // quitamos requisito al ocultar
-                                                    input.value = '';
-                                                }
-                                            }
-                                        }
-
-                                        actualizarNombresAcumulados();
-                                    };
-
-                                    // Eventos
-                                    selAsistencia.addEventListener('change', actualizarInterfaz);
-
-                                    document.addEventListener('input', (e) => {
-                                        if (!e.target || !e.target.name) return;
-                                        if (e.target.name.includes('nombre_') || e.target.name.includes('respondedor_nombre')) {
-                                            actualizarNombresAcumulados();
-                                        }
-                                    });
-
-                                    // Init
-                                    actualizarInterfaz();
-                                };
-
-                                // Delay para asegurar que Elementor está listo
-                                if (window.bodaInvitacion) initKippisForm();
-                                else document.addEventListener('boda:lista', initKippisForm, {once:true});
-                            })();
-                        </script>
+                        
                     </div>
                 </div>
             </div>
@@ -2922,163 +2788,8 @@
     }
     </style>
 
-    <script>
-        (function () {
-            /*** CONFIG ***/
-            const POPUP_ID = 73915; // ✅ tu ID real
-            const SUCCESS_TITLE = '¡Confirmación enviada!';
-            const SUCCESS_DESC = 'Tu respuesta quedó registrada correctamente. ✨';
-            const AUTO_CLOSE_MS = 6500;
-
-        
-
+    
     
 
-            /*** Toast fallback ***/
-            function ensureToast() {
-                let el = document.querySelector('.kippis-toast');
-                if (el) return el;
-
-                el = document.createElement('div');
-                el.className = 'kippis-toast';
-                el.innerHTML = `
-      <div class="title"></div>
-      <div class="desc"></div>
-      <div class="actions">
-        <button class="btn ok" type="button">Listo</button>
-        <button class="btn close" type="button">Cerrar</button>
-      </div>
-    `;
-                document.body.appendChild(el);
-
-                el.querySelector('.btn.ok').addEventListener('click', () => hideToast(el));
-                el.querySelector('.btn.close').addEventListener('click', () => hideToast(el));
-
-                return el;
-            }
-
-            function showToast(title, desc) {
-                const el = ensureToast();
-                el.querySelector('.title').textContent = title;
-                el.querySelector('.desc').textContent = desc;
-                el.classList.add('is-visible');
-                if (AUTO_CLOSE_MS) {
-                    setTimeout(() => hideToast(el), AUTO_CLOSE_MS);
-                }
-            }
-
-            function hideToast(el) {
-                if (!el) return;
-                el.classList.remove('is-visible');
-            }
-
-            /*** Popup Elementor ***/
-            function openElementorPopup() {
-                try {
-                    // Elementor Pro Popup API
-                    if (window.elementorProFrontend &&
-                        elementorProFrontend.modules &&
-                        elementorProFrontend.modules.popup &&
-                        typeof elementorProFrontend.modules.popup.showPopup === 'function') {
-                        elementorProFrontend.modules.popup.showPopup({ id: POPUP_ID });
-                        return true;
-                    }
-                } catch (e) { }
-                return false;
-            }
-
-      
-
-
-            function boot() {
-                document.querySelectorAll('form.elementor-form').forEach(attachToForm);
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', boot);
-            } else {
-                boot();
-            }
-        })();
-    </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzDFrRYcN3KAq-XF6gQjsZzfmUMPUo31VcJdfmUCcjCMoaAARQHj5LV7LhYgZhE-mHT/exec";
-
-    const form = document.querySelector("form.elementor-form");
-
-    if (!form) return;
-
-    form.addEventListener("submit", function () {
-
-        setTimeout(function () {
-
-            const datos = {
-                respondedor_nombre: document.getElementById("form-field-respondedor_nombre")?.value || "",
-                asistencia_select: document.getElementById("form-field-asistencia_select")?.value || "",
-                nombre_2: document.getElementById("form-field-nombre_2")?.value || "",
-                nombre_3: document.getElementById("form-field-nombre_3")?.value || "",
-                nombre_4: document.getElementById("form-field-nombre_4")?.value || "",
-                nombre_5: document.getElementById("form-field-nombre_5")?.value || "",
-                restricciones: document.getElementById("form-field-field_51b829f")?.value || "",
-                mensaje: document.getElementById("form-field-message")?.value || "",
-                nombres_acumulados: document.getElementById("form-field-nombres_acumulados")?.value || "",
-                pases_asignados: document.getElementById("form-field-pases_asignados")?.value || "",
-                total_confirmados: document.getElementById("form-field-asistencia_select")?.value || "0"
-            };
-
-           fetch(WEBAPP_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: JSON.stringify(datos)
-});
-       
-
-        }, 500);
-
-    });
-
-});
-document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
-            const form = document.querySelector('form.elementor-form');
-            if (!form) return;
-
-            // Desactiva validaciones nativas del navegador al enviar
-            form.setAttribute('novalidate', 'novalidate');
-
-            // Intercepta el envío del formulario para anular mensajes visuales
-            form.addEventListener('submit', function (e) {
-                // Si deseas que el formulario igual se envíe a la base de datos pero sin mostrar avisos, 
-                // puedes comentar la siguiente línea (e.preventDefault()). 
-                // De lo contrario, esto frena cualquier recarga o cartel molesto:
-                
-                // e.preventDefault(); 
-                
-                // Forzamos a ocultar las cajas de mensaje de Elementor por si aparecen dinámicamente
-                setTimeout(() => {
-                    document.querySelectorAll('.elementor-message').forEach(msg => {
-                        msg.style.display = 'none';
-                        msg.style.visibility = 'hidden';
-                    });
-                }, 100);
-            });
-        }, 800);
-    });
-</script>
-<script>
-jQuery(function($) {
-
-    $(document).on('submit_success', 'form.elementor-form', function() {
-
-        showToast(
-            'Gracias',
-            'Tu confirmación ha sido enviada'
-        );
-
-    });
-
-});
-</script>
 </body>
 </html>
