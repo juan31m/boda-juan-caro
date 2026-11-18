@@ -41,7 +41,10 @@
         nombre.textContent = data.nombre;
         saludo.textContent = data.cupos === 1 ? 'Estás cordialmente invitado/a a la boda de' : 'Están cordialmente invitados a la boda de';
         const cantidad = document.createElement('strong');
-        cantidad.textContent = data.cupos+(data.cupos === 1 ? ' pase' : ' pases');
+        const numero = document.createElement('span');
+        numero.className = 'boda-numero-pases';
+        numero.textContent = String(data.cupos);
+        cantidad.append(numero, document.createTextNode(data.cupos === 1 ? ' pase' : ' pases'));
         pases.replaceChildren(document.createTextNode('Esta invitación contiene '), cantidad);
         pases.hidden = false;
         estado.textContent = '';
