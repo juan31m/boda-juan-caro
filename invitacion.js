@@ -40,7 +40,9 @@
         if (typeof data.nombre !== 'string' || !data.nombre.trim() || !Number.isInteger(data.cupos) || data.cupos < 1 || data.cupos > 100) throw new Error('Los datos de esta invitación necesitan revisión.');
         nombre.textContent = data.nombre;
         saludo.textContent = data.cupos === 1 ? 'Estás cordialmente invitado/a a la boda de' : 'Están cordialmente invitados a la boda de';
-        pases.textContent = 'Esta invitación contiene '+data.cupos+(data.cupos === 1 ? ' pase' : ' pases');
+        const cantidad = document.createElement('strong');
+        cantidad.textContent = data.cupos+(data.cupos === 1 ? ' pase' : ' pases');
+        pases.replaceChildren(document.createTextNode('Esta invitación contiene '), cantidad);
         pases.hidden = false;
         estado.textContent = '';
         window.bodaInvitacion = Object.freeze({nombre:data.nombre,cupos:data.cupos});
