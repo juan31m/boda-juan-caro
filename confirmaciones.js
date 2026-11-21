@@ -4,7 +4,7 @@
   const form=document.querySelector('form.elementor-form');
   if(!form) return;
   const get=id=>document.getElementById('form-field-'+id);
-  const select=get('asistencia_select'),responde=get('respondedor_nombre');
+  const select=get('asistencia_select');
   const restricciones=get('field_51b829f'),mensaje=get('message');
   const button=form.querySelector('button[type="submit"]');
   const label=button.querySelector('.elementor-button-text') || button;
@@ -14,7 +14,7 @@
   const fields=document.createElement('div');fields.id='boda-asistentes';
   select.closest('.elementor-field-group').after(fields);
   form.noValidate=true;
-  select.required=true;responde.maxLength=200;restricciones.maxLength=2000;mensaje.maxLength=2000;
+  select.required=true;restricciones.maxLength=2000;mensaje.maxLength=2000;
   let busy=false,lastPayload='',lastId='',prepared=false;
   function mostrar(estado,texto){status.dataset.estado=estado;status.textContent=texto;}
   function adaptar() {
@@ -66,9 +66,9 @@
    const count=Number(select.value);
    if(select.value==='' || !Number.isInteger(count) || count<0 || count>window.bodaInvitacion.cupos){mostrar('error','Selecciona cuántas personas asistirán.');return;}
    const nombres=Array.from(fields.querySelectorAll('input')).slice(0,count).map(el=>el.value.trim());
-   if(!responde.value.trim() || nombres.some(n=>!n)){mostrar('error','Completa los nombres obligatorios.');return;}
+   if(nombres.some(n=>!n)){mostrar('error','Completa los nombres obligatorios.');return;}
    const codigo=new URLSearchParams(location.search).get('invitado');
-   const payload={codigo,asistentes:count,responde:responde.value.trim(),nombres,restricciones:restricciones.value.trim(),mensaje:mensaje.value.trim()};
+   const payload={codigo,asistentes:count,responde:nombres[0] || window.bodaInvitacion.nombre,nombres,restricciones:restricciones.value.trim(),mensaje:mensaje.value.trim()};
    const serialized=JSON.stringify(payload);
    if(serialized!==lastPayload){lastPayload=serialized;lastId=crypto.randomUUID().replace(/-/g,'');}
    payload.envio=lastId;
@@ -94,3 +94,4 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
 })();
+

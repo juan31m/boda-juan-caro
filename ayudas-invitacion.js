@@ -13,7 +13,7 @@
       const boton = overlay.querySelector('.btn-abrir a');
       if (!boton) return;
       boton.classList.add('boda-pulso');
-      setTimeout(function () { boton.classList.remove('boda-pulso'); }, 5000);
+
     }, 1200);
   }
   document.addEventListener('boda:portada-lista', animarBoton);
@@ -43,3 +43,4 @@
   }, true);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',animarBoton); else animarBoton();
 })();
+
