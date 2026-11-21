@@ -804,7 +804,7 @@
 <link rel="stylesheet" href="personalizacion.css">
 
 <script src="config.js" defer></script>
-<script src="invitacion.js" defer></script>
+<script src="invitacion.js?v=20261121" defer></script>
 <style id="boda-confirmaciones-estilo">
 #boda-asistentes {width:100%;display:flex;flex-wrap:wrap;gap:12px;}
 #boda-asistentes [hidden] {display:none!important;}
@@ -814,7 +814,7 @@
 form[aria-busy="true"] button {opacity:.65;cursor:wait;}
 
 </style>
-<script src="confirmaciones.js" defer></script>
+<script src="confirmaciones.js?v=20261121" defer></script>
 <style id="portada-carga-segura">
 .pantalla-inicio .elementor-element-462ea90c { width:100% !important; }
 /* La portada debe poder abrirse incluso si Elementor no termina de cargar. */
@@ -980,6 +980,39 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
 .boda-fecha-confirmacion {margin:0 0 26px;padding:16px 18px;border:1px solid #E1BEC5;border-radius:12px;background:#F4E3E6;color:#1C355E;font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;line-height:1.35;text-align:center;}
 .boda-fecha-confirmacion strong {font-weight:700;}
 </style>
+<!-- AJUSTES 21 NOV: portada, menú y guía opcional de desplazamiento -->
+<style id="ajustes-invitacion-21nov">/* Portada: no mostrar mensajes provisionales de otra familia. */
+.boda-portada[data-estado="cargando"] #boda-familia,
+.boda-portada[data-estado="cargando"] #boda-saludo,
+.boda-portada[data-estado="cargando"] #boda-pases {visibility:hidden !important;}
+.boda-portada[data-estado="cargando"] #boda-estado {color:#526F94;}
+@keyframes boda-invitar-pulsacion {0%,70%,100%{transform:translateY(0)}25%{transform:translateY(-3px)}45%{transform:translateY(1px)}}
+.pantalla-inicio .btn-abrir a.boda-pulso {animation:boda-invitar-pulsacion 1s ease-in-out 5;}
+/* GUÍA OPCIONAL: desactivar en ayudas-invitacion.js, MOSTRAR_GUIA_DESLIZAR. */
+#boda-guia-scroll {position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:99999;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 18px;border-radius:24px;background:rgba(255,250,247,.72);color:rgba(28,53,94,.76);box-shadow:0 3px 12px #1c355e0d;font-family:Georgia,serif;font-size:13px;max-width:calc(100vw - 110px);text-align:center;}
+#boda-guia-scroll svg {width:44px;height:52px;animation:boda-deslizar 1.4s ease-in-out 3;}
+@keyframes boda-deslizar {0%,100%{transform:translateY(5px);opacity:.4}55%{transform:translateY(-7px);opacity:.85}}
+@media(prefers-reduced-motion:reduce){.pantalla-inicio .btn-abrir a.boda-pulso,#boda-guia-scroll svg{animation:none;}}
+/* Monograma centrado e independiente del menú. */
+.elementor-233849 .elementor-element.elementor-element-427bbfe6 > .e-con-inner {position:relative;min-height:66px;justify-content:flex-start;align-items:center;}
+.elementor-233849 .elementor-element.elementor-element-14fc9fa8 {width:calc(50% - 58px);--width:calc(50% - 58px);padding:0;}
+.elementor-233849 .elementor-element.elementor-element-1e9caccc {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;--width:88px;padding:0;}
+.elementor-233849 .elementor-element.elementor-element-3df80a60 img {width:88px !important;max-width:88px;}
+.elementor-element-427bbfe6 .e-n-menu-heading {gap:12px;flex-wrap:nowrap;}
+.elementor-element-427bbfe6 .e-n-menu-title-text {font-size:16px !important;white-space:nowrap;}
+.elementor-element-427bbfe6 .e-n-menu-title,.elementor-element-427bbfe6 .e-n-menu-title-container {padding-left:0 !important;padding-right:0 !important;}
+.elementor-233849 .elementor-element.elementor-element-65d6ed82 > .e-con-inner {position:relative;min-height:50px;justify-content:flex-end;align-items:center;}
+.elementor-233849 .elementor-element.elementor-element-91f8c2b {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;--width:88px;padding:0;}
+.elementor-233849 .elementor-element.elementor-element-658d2645 {width:48px;--width:48px;padding:0;margin:0;}
+.elementor-element-65d6ed82 .elementor-element-4019c9b4 img {width:88px;}
+/* Marcos con margen lateral en celular; no afecta Álbum de fotos. */
+@media(max-width:767px){
+.elementor-233849 .elementor-element.elementor-element-70a64ff8,
+.elementor-233849 .elementor-element.elementor-element-53b8daea {width:calc(100% - 32px);--width:calc(100% - 32px);max-width:calc(100% - 32px);align-self:center;margin-left:auto;margin-right:auto;}
+}
+
+</style>
+<script src="ayudas-invitacion.js?v=20261121" defer></script>
 </head>
 
 <body
@@ -1017,7 +1050,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                             data-id="462ea90c" data-element_type="widget" data-e-type="widget"
                             data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <div class="boda-portada"><h2 id="boda-familia">Nuestra boda</h2><p id="boda-saludo">Están cordialmente invitados a la boda de</p><p class="boda-novios">Juan José y Carolina</p><p id="boda-pases" hidden></p><p id="boda-estado" role="status" aria-live="polite">Consultando tu invitación…</p><button id="boda-reintentar" type="button" hidden>Volver a intentar</button></div>
+                                <div class="boda-portada" data-estado="cargando" aria-busy="true"><h2 id="boda-familia">&nbsp;</h2><p id="boda-saludo">Están cordialmente invitados a la boda de</p><p class="boda-novios">Juan José y Carolina</p><p id="boda-pases" hidden></p><p id="boda-estado" role="status" aria-live="polite">Preparando tu invitación…</p><button id="boda-reintentar" type="button" hidden>Volver a intentar</button></div>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-7594fd9b bloque-pases elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
@@ -1027,7 +1060,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                         </div>
                         <div class="elementor-element elementor-element-7d7fb7ce elementor-align-center btn-abrir elementor-invisible elementor-widget elementor-widget-button"
                             data-id="7d7fb7ce" data-element_type="widget" data-e-type="widget"
-                            data-settings="{&quot;_animation&quot;:&quot;shake&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:1000}"
+                            data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:1000}"
                             data-widget_type="button.default">
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
@@ -1212,7 +1245,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                                             document.body.style.setProperty('overflow', 'auto', 'important');
                                             document.body.style.position = 'relative';
                                             document.body.style.height = 'auto';
-                                            setTimeout(() => { overlay.style.display = 'none'; }, 380);
+                                            setTimeout(() => { overlay.style.display = 'none'; document.dispatchEvent(new Event('boda:abierta')); }, 380);
                                         }
 
                                         function crearTogglePlayPause(audio) {
@@ -1283,7 +1316,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                     data-id="14fc9fa8" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-4e02902b e-full_width e-n-menu-layout-horizontal e-n-menu-tablet elementor-widget elementor-widget-n-menu"
                         data-id="4e02902b" data-element_type="widget" data-e-type="widget"
-                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Fiesta&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Fiesta&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Albúm fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://photos.app.goo.gl/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Confirmar asistencia&quot;,&quot;_id&quot;:&quot;boda_rsvp&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;#confirmacion&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                         data-widget_type="mega-menu.default">
                         <div class="elementor-widget-container">
                             <nav class="e-n-menu" data-widget-number="130" aria-label="Menú">
@@ -1330,7 +1363,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                                                 </a>
                                             </div>
                                         </li>
-                                    </ul>
+                                    <li class="e-n-menu-item"><div id="e-n-menu-title-1304" class="e-n-menu-title"><a class="e-n-menu-title-container e-focus e-link" href="#confirmacion"><span class="e-n-menu-title-text">Confirmar asistencia</span></a></div></li></ul>
                                 </div>
                             </nav>
                         </div>
@@ -1342,29 +1375,11 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                         data-id="3df80a60" data-element_type="widget" data-e-type="widget"
                         data-widget_type="image.default">
                         <div class="elementor-widget-container" style="display: flex; justify-content: center;">
-                            <a href="scripts-locales/burgundy/">
-                                <img src="foto3.png" style="width:10%; height:auto;" alt="">
-                            </a>
+                            <img src="foto3.png" style="width:10%; height:auto;" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="elementor-element elementor-element-2163349e e-con-full e-flex e-con e-child"
-                    data-id="2163349e" data-element_type="container" data-e-type="container">
-                    <div class="elementor-element elementor-element-57d46f0a elementor-widget elementor-widget-button"
-                        data-id="57d46f0a" data-element_type="widget" data-e-type="widget"
-                        data-widget_type="button.default">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-button-wrapper">
-                                <a class="elementor-button elementor-button-link elementor-size-sm"
-                                    href="#confirmacion">
-                                    <span class="elementor-button-content-wrapper">
-                                        <span class="elementor-button-text">Confirma asistencia</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="elementor-element elementor-element-65d6ed82 elementor-hidden-desktop e-flex e-con-boxed e-con e-parent"
@@ -1377,35 +1392,17 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                         data-id="4019c9b4" data-element_type="widget" data-e-type="widget"
                         data-widget_type="image.default">
                         <div class="elementor-widget-container" style="text-align: center;">
-                            <a href="scripts-locales/burgundy/">
-                                <img loading="lazy" decoding="async" width="293" height="112" src="foto3.png"
+                            <img loading="lazy" decoding="async" width="293" height="112" src="foto3.png"
                                     class="attachment-large size-large" alt="" />
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="elementor-element elementor-element-78abc378 e-con-full e-flex e-con e-child"
-                    data-id="78abc378" data-element_type="container" data-e-type="container">
-                    <div class="elementor-element elementor-element-139ae4c elementor-widget elementor-widget-button"
-                        data-id="139ae4c" data-element_type="widget" data-e-type="widget"
-                        data-widget_type="button.default">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-button-wrapper">
-                                <a class="elementor-button elementor-button-link elementor-size-sm"
-                                    href="#confirmacion">
-                                    <span class="elementor-button-content-wrapper">
-                                        <span class="elementor-button-text">Confirma asistencia</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="elementor-element elementor-element-658d2645 e-con-full e-flex e-con e-child"
                     data-id="658d2645" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-1346e5a4 e-full_width e-n-menu-layout-horizontal e-n-menu-tablet elementor-widget elementor-widget-n-menu"
                         data-id="1346e5a4" data-element_type="widget" data-e-type="widget"
-                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Catedral%20Cat%C3%B3lica%20de%20Latacunga&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Recepci\u00f3n&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Quinta%20Agua%20Luna&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Alb\u00fam fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https:\/\/photos.app.goo.gl\/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;item_position_horizontal_mobile&quot;:&quot;end&quot;,&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+                        data-settings="{&quot;menu_items&quot;:[{&quot;item_title&quot;:&quot;Iglesia&quot;,&quot;_id&quot;:&quot;0777feb&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Catedral%20Cat%C3%B3lica%20de%20Latacunga&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Recepción&quot;,&quot;_id&quot;:&quot;8f65f62&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://www.google.com/maps/search/?api=1&amp;query=Quinta%20Agua%20Luna&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Albúm fotos&quot;,&quot;_id&quot;:&quot;d44086b&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;https://photos.app.goo.gl/MSYUXxoA4jPediL19&quot;,&quot;is_external&quot;:&quot;on&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;},{&quot;item_title&quot;:&quot;Confirmar asistencia&quot;,&quot;_id&quot;:&quot;boda_rsvp&quot;,&quot;item_link&quot;:{&quot;url&quot;:&quot;#confirmacion&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;},&quot;item_dropdown_content&quot;:&quot;no&quot;,&quot;item_icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;item_icon_active&quot;:null,&quot;element_id&quot;:&quot;&quot;}],&quot;item_position_horizontal_mobile&quot;:&quot;end&quot;,&quot;menu_item_title_distance_from_content_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;full_width&quot;,&quot;item_layout&quot;:&quot;horizontal&quot;,&quot;open_on&quot;:&quot;hover&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;,&quot;breakpoint_selector&quot;:&quot;tablet&quot;,&quot;menu_item_title_distance_from_content&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_item_title_distance_from_content_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                         data-widget_type="mega-menu.default">
                         <div class="elementor-widget-container">
                             <nav class="e-n-menu" data-widget-number="323" aria-label="Menú">
@@ -1450,7 +1447,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                                                 </a>
                                             </div>
                                         </li>
-                                    </ul>
+                                    <li class="e-n-menu-item"><div id="e-n-menu-title-3234" class="e-n-menu-title"><a class="e-n-menu-title-container e-focus e-link" href="#confirmacion"><span class="e-n-menu-title-text">Confirmar asistencia</span></a></div></li></ul>
                                 </div>
                             </nav>
                         </div>
@@ -1976,7 +1973,7 @@ Porque su historia no termina con un «felices para siempre»… apenas comienza
                 data-element_type="container" data-e-type="container">
                 <div class="elementor-element elementor-element-6b11cd3f elementor-widget elementor-widget-n-carousel"
                     data-id="6b11cd3f" data-element_type="widget" data-e-type="widget"
-                    data-settings="{&quot;carousel_items&quot;:[{&quot;slide_title&quot;:&quot;Foto1&quot;,&quot;_id&quot;:&quot;de8a767&quot;},{&quot;slide_title&quot;:&quot;Foto2&quot;,&quot;_id&quot;:&quot;e3839e3&quot;},{&quot;slide_title&quot;:&quot;Foto3&quot;,&quot;_id&quot;:&quot;6946ad4&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;d6adcad&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;65f8201&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;0c349c9&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;8d261a1&quot;}],&quot;slides_to_show&quot;:&quot;4&quot;,&quot;slides_to_scroll&quot;:&quot;4&quot;,&quot;autoplay_speed&quot;:0,&quot;speed&quot;:8000,&quot;slides_to_show_tablet&quot;:&quot;2&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;offset_sides&quot;:&quot;none&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
+                    data-settings="{&quot;carousel_items&quot;:[{&quot;slide_title&quot;:&quot;Foto1&quot;,&quot;_id&quot;:&quot;de8a767&quot;},{&quot;slide_title&quot;:&quot;Foto2&quot;,&quot;_id&quot;:&quot;e3839e3&quot;},{&quot;slide_title&quot;:&quot;Foto3&quot;,&quot;_id&quot;:&quot;6946ad4&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;d6adcad&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;65f8201&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;0c349c9&quot;},{&quot;slide_title&quot;:&quot;Foto4&quot;,&quot;_id&quot;:&quot;8d261a1&quot;}],&quot;slides_to_show&quot;:&quot;4&quot;,&quot;slides_to_scroll&quot;:&quot;4&quot;,&quot;autoplay_speed&quot;:0,&quot;speed&quot;:6400,&quot;slides_to_show_tablet&quot;:&quot;2&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;offset_sides&quot;:&quot;none&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                     data-widget_type="nested-carousel.default">
                     <div class="elementor-widget-container">
                         <div class="e-n-carousel swiper" role="region" aria-roledescription="carousel"
