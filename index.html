@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="preload" as="image" href="sobre1-optimizado.webp" fetchpriority="high">
+<link rel="preload" as="image" href="sobre2-optimizado.webp" fetchpriority="high">
     <meta charset="UTF-8">
     <meta name="referrer" content="no-referrer">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
@@ -1013,7 +1015,19 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
 
 </style>
 <script src="ayudas-invitacion.js?v=20261121b" defer></script>
-<style>.elementor-element-7218fe1d section.e-n-accordion-item > .e-con {display:flex !important;} .elementor-element-7218fe1d .e-n-accordion-item-title{cursor:default;}</style></head>
+<style>.elementor-element-7218fe1d section.e-n-accordion-item > .e-con {display:flex !important;} .elementor-element-7218fe1d .e-n-accordion-item-title{cursor:default;}</style><style>
+.boda-historia-texto p{margin:0 0 1em;font:inherit;color:inherit;text-align:justify;}.boda-historia-texto p:last-child{margin-bottom:0;}
+html.sobre-cargando .pantalla-inicio .elementor-element-3712953a {opacity:0;pointer-events:none;}
+html.sobre-cargando .pantalla-inicio::after{content:'Preparando tu invitación…';position:absolute;top:48%;left:0;width:100%;text-align:center;color:#1C355E;font:20px Georgia,serif;}
+</style>
+<script>
+// Mostrar el sobre y su contenido juntos. Respaldo tras 8 segundos si la red falla.
+(function(){document.documentElement.classList.add('sobre-cargando');let timer;function mostrar(){clearTimeout(timer);document.documentElement.classList.remove('sobre-cargando');}
+timer=setTimeout(mostrar,8000);
+document.addEventListener('DOMContentLoaded',function(){const images=[...document.querySelectorAll('.pantalla-inicio img[src="sobre1-optimizado.webp"],.pantalla-inicio img[src="sobre2-optimizado.webp"]')];
+Promise.all(images.map(img=>new Promise(resolve=>{const finish=()=>{if(img.decode)img.decode().catch(()=>{}).finally(resolve);else resolve();};if(img.complete)finish();else{img.addEventListener('load',finish,{once:true});img.addEventListener('error',resolve,{once:true});}}))).then(mostrar);
+});})();
+</script></head>
 
 <body
     class="wp-singular post-template post-template-elementor_canvas single single-post postid-233849 single-format-standard wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-233849">
@@ -1031,7 +1045,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                         data-id="713e4f3a" data-element_type="widget" data-e-type="widget"
                         data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img src="sobre1.png" alt="Sobre" width="1353" height="1726"
+                            <img fetchpriority="high" src="sobre1-optimizado.webp" alt="Sobre" width="1353" height="1726"
                                 class="attachment-large size-large wp-image-214662" loading="eager" decoding="async">
                         </div>
                     </div>
@@ -1039,7 +1053,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                         data-id="6dac10bc" data-element_type="widget" data-e-type="widget"
                         data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img src="sobre2.png" alt="Sobre" width="1353" height="1726"
+                            <img fetchpriority="high" src="sobre2-optimizado.webp" alt="Sobre" width="1353" height="1726"
                                 class="attachment-large size-large wp-image-214662" loading="eager" decoding="async">
                         </div>
                     </div>
@@ -1820,12 +1834,7 @@ form[aria-busy="true"] button {opacity:.65;cursor:wait;}
                             <div class="elementor-element elementor-element-1dd3e420 elementor-widget elementor-widget-heading"
                                 data-id="1dd3e420" data-element_type="widget" data-e-type="widget"
                                 data-widget_type="heading.default">
-                                <div class="elementor-widget-container"> <h2 class="elementor-heading-title elementor-size-default">Había una vez dos almas que, sin saberlo, Dios había destinado a encontrarse. Todo comenzó el 6 de octubre de 2024, cuando Juanjo, después de seguir a Caro en Instagram durante un tiempo, reunió el valor para escribirle. Así nacieron las primeras conversaciones, las risas y una conexión que poco a poco se hizo especial.
-Mientras se conocían, descubrieron hermosas «Diosidencias»: sus padres habían sido grandes amigos cuando trabajaban como profesores en La Maná, hacía más de treinta años, y sus abuelitos también habían compartido momentos sin imaginar que algún día sus nietos se enamorarían.
-El 25 de octubre de 2024, Juanjo viajó desde Quito hasta Latacunga para conocer a Caro. Después de tantas conversaciones, llegó el primer abrazo, el primer beso y una tarde que quedaría grabada para siempre en sus corazones. En el mirador favorito de Caro, Juanjo le declaró su amor y le pidió que fueran enamorados. Ella dijo que sí.
-Desde aquel día comenzaron a construir una historia llena de amor, risas, sueños y momentos inolvidables, aprendiendo a elegirse y caminar juntos de la mano.
-Hoy, con Dios como guía y testigo de su amor, están a punto de dar el paso más hermoso: unir sus vidas para siempre.
-Porque su historia no termina con un «felices para siempre»… apenas comienza el capítulo más hermoso de sus vidas.</h2>
+                                <div class="elementor-widget-container"> <div class="elementor-heading-title elementor-size-default boda-historia-texto"><p>Había una vez dos almas que, sin saberlo, Dios había destinado a encontrarse. Todo comenzó el 6 de octubre de 2024, cuando Juanjo, después de seguir a Caro en Instagram durante un tiempo, reunió el valor para escribirle. Así nacieron las primeras conversaciones, las risas y una conexión que, poco a poco, se hizo especial.</p><p>Mientras se conocían, descubrieron hermosas coincidencias: sus padres habían sido grandes amigos cuando trabajaban como profesores en La Maná, hace más de treinta y cinco años, y sus abuelitos también habían compartido momentos, sin imaginar que algún día sus nietos se enamorarían.</p><p>El 25 de octubre de 2024, Juanjo viajó desde Quito hasta Latacunga para conocer a Caro. Después de tantas conversaciones, llegó el primer abrazo, el primer beso y una tarde que quedaría grabada para siempre en sus corazones. En el mirador favorito de Caro, Juanjo le declaró su amor y le pidió que fueran enamorados. Ella dijo que sí.</p><p>Desde aquel día comenzaron a construir una historia llena de amor, risas, sueños y momentos inolvidables, aprendiendo a elegirse y a caminar juntos de la mano. Hoy, con Dios como guía y testigo de su amor, están a punto de dar el paso más hermoso: unir sus vidas para siempre.</p><p>Porque su historia no termina con un «felices para siempre»… apenas comienza el capítulo más bello de sus vidas.</p></div>
                                 </div>
                             </div>
                         </div>
@@ -2675,6 +2684,7 @@ Porque su historia no termina con un «felices para siempre»… apenas comienza
 <script src="media/video-invitacion.js" defer></script>
 </body>
 </html>
+
 
 
 
